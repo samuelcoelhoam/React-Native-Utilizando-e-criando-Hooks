@@ -40,14 +40,14 @@ const estilos = StyleSheet.create({
         height: 28,
     },
     boasvindas: {
-        color: "black",
+        color: "#464646",
         marginTop: 24,
         fontSize: 26,
         lineHeight: 42,
         fontWeight: "bold",
     },
     legenda: {
-        color: "black",
+        color: "#A3A3A3",
         fontSize: 16,
         lineHeight: 26,
     },
