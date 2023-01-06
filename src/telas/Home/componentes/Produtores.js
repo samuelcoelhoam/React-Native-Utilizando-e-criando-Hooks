@@ -14,7 +14,7 @@ export default function Produtores({ topo: Topo }) {
     }, []); //Parece o componentDidMount, é executado apenas uma vez quando o componente for carregado
 
     const TopoLista = () => {
-        return <>
+        return < >
             <Topo/> 
             <Text style ={estilos.titulo}>{ titulo }</Text>
         </>
@@ -36,20 +36,5 @@ const estilos = StyleSheet.create({
         marginTop: 16,
         fontWeight: "bold",
         color: "#464646",
-    },
-    lista: {
-
-    },
-    nome: {
-
-    },
-    imagem: {
-
-    },
-    distancia: {
-
-    },
-    estrelas: {
-
     },
 })
