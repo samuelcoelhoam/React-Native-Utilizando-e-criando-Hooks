@@ -5,12 +5,23 @@ import logo from '../../../assets/logo.png'
 import topo from "../../../mocks/topo";
 import { carregaProdutos, carregaTopo } from "../../../servicos/carregaDados";
 
-export default function Topo() {
-    return <View style={ estilos.topo }>
+class Topo extends React.Component {
+    atualizaTopo() {
+        const retorno = carregaTopo();
+        console.log(retorno);
+    }
+    
+    componentDidMount() {
+        this.atualizaTopo();
+    }
+
+    render () {
+        return <View style={ estilos.topo }>
         <Image source={logo} style={ estilos.imagem }/>
         <Text style={estilos.boasvindas} > {topo.boasVindas}</Text>
         <Text style={estilos.legenda} > {topo.legenda}</Text>
     </View>
+    }
 } 
 
 const estilos = StyleSheet.create({
@@ -35,3 +46,5 @@ const estilos = StyleSheet.create({
         lineHeight: 26,
     },
 });
+
+export default Topo;
