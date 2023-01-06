@@ -6,9 +6,15 @@ import topo from "../../../mocks/topo";
 import { carregaProdutos, carregaTopo } from "../../../servicos/carregaDados";
 
 class Topo extends React.Component {
+    state = {
+        topo: {
+            boasVindas: "",
+            legenda: "",
+        }
+    }
     atualizaTopo() {
         const retorno = carregaTopo();
-        console.log(retorno);
+        this.setState({topo: retorno});
     }
     
     componentDidMount() {
@@ -18,8 +24,8 @@ class Topo extends React.Component {
     render () {
         return <View style={ estilos.topo }>
         <Image source={logo} style={ estilos.imagem }/>
-        <Text style={estilos.boasvindas} > {topo.boasVindas}</Text>
-        <Text style={estilos.legenda} > {topo.legenda}</Text>
+        <Text style={estilos.boasvindas} > {this.state.topo.boasVindas}</Text>
+        <Text style={estilos.legenda} > {this.state.topo.legenda}</Text>
     </View>
     }
 } 
